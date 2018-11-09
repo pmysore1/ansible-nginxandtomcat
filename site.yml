@@ -1,11 +1,18 @@
 ---
 # This playbook deploys a simple standalone Tomcat 7 server.
 
-- hosts: tomcat-servers
-  remote_user: root
+- hosts: tag_Role_tomcat
+  remote_user: ec2-user
   become: yes
   become_method: sudo
 
   roles:
-    #- selinux
     - tomcat
+
+- hosts: tag_Role_nginx
+  remote_user: ec2-user
+  become: yes
+  become_method: sudo
+
+  roles:
+    - nginx
