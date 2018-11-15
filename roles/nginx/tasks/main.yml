@@ -9,8 +9,8 @@
   #notify: restart nginx
 
 - name: Copy nginx configuration for tomcat
-  copy: src=tomcat-proxy.conf dest=/etc/nginx/conf.d/tomcat-proxy.conf mode=0755
+  copy: src=tomcat-proxy.conf dest=/etc/nginx/default.d/tomcat-proxy.conf mode=0755
 
 - name: Copy nginx upstream configuration file
-  template: src=tomcat-upstream.conf dest=/etc/nginx/default.d/tomcat-upstream.conf
+  template: src=tomcat-upstream.conf dest=/etc/nginx/conf.d/tomcat-upstream.conf mode=0755
   notify: restart nginx
