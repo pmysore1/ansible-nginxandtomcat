@@ -6,4 +6,11 @@
 
 - name: Copy nginx configuration for wordpress
   template: src=default.conf dest=/etc/nginx/conf.d/default.conf
+  #notify: restart nginx
+
+- name: Copy nginx configuration for tomcat
+  file: src=tomcat-proxy.conf dest=/etc/nginx/conf.d/tomcat-proxy.conf
+
+- name: Copy nginx upstream configuration file
+  template: src=tomcat-upstream.conf dest=/etc/nginx/conf.d/tomcat-upstream.conf
   notify: restart nginx
