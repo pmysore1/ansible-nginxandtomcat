@@ -1,0 +1,21 @@
+<Context>
+
+<Resource name="jdbc/{{ hostvars[groups['tag_Role_RDS'][0]]['ec2_DBName'] }}"
+
+auth="Container"
+
+type="javax.sql.DataSource"
+
+username="{{ hostvars[groups['tag_Role_RDS'][0]]['ec2_master_username'] }}"
+
+password="[DatabasePassword]"
+
+driverClassName="com.mysql.jdbc.Driver"
+
+url="jdbc:mysql:/{{ hostvars[groups['tag_Role_RDS'][0]]['ec2__address'] }}: {{ hostvars[groups['tag_Role_RDS'][0]]['ec2__port'] }}/testapp"
+
+maxActive="15"
+
+maxIdle="3"/>
+
+</Context>
