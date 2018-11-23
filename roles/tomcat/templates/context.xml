@@ -12,7 +12,7 @@ password="[DatabasePassword]"
 
 driverClassName="com.mysql.jdbc.Driver"
 
-url="jdbc:mysql:/{{ hostvars[groups['tag_Role_RDS'][0]]['ec2__address'] }}: {{ hostvars[groups['tag_Role_RDS'][0]]['ec2__port'] }}/testapp"
+url="jdbc:mysql:/{{ hostvars[groups['tag_Role_RDS'][0]]['ec2__address'] }}:{{ hostvars[groups['tag_Role_RDS'][0]]['ec2__port'] }}/testapp"
 
 maxActive="15"
 
